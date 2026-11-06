@@ -1,0 +1,29 @@
+{
+  "name": "pillar-construction",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Website for Pillar Construction, a family-owned New Jersey remodeling and drywall contractor.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "serve": "http-server site -p 4173 -c-1 --silent",
+    "test": "npm run test:unit && npm run lint:html && npm run test:links && npm run test:e2e",
+    "test:unit": "node --test \"tests/unit/*.test.mjs\"",
+    "test:e2e": "playwright test",
+    "lint:html": "html-validate \"site/**/*.html\"",
+    "test:links": "linkinator site/home.html --recurse --skip \"^https://\" --skip \"^mailto:\"",
+    "lighthouse": "lhci autorun"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.6.0"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.16.0",
+    "@playwright/test": "^1.65.0",
+    "html-validate": "^11.18.0",
+    "http-server": "^14.1.1",
+    "linkinator": "^8.1.0"
+  }
+}

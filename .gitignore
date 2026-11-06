@@ -1,0 +1,15 @@
+node_modules/
+.netlify/
+test-results/
+playwright-report/
+.lighthouseci/
+.DS_Store
+.env
+
+# Local-only files that are not part of the website
+/.claude/
+/_old-site/
+/IT217*/
+/image*.png
+/constructionimage.png
+/Pillar-Construction-Logo.png
